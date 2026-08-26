@@ -2,6 +2,8 @@
 
 **Language / Nyelv:** [English](#english) · [Magyar](#magyar)
 
+**🌐 Live / Élő oldal:** <https://maszlaig.github.io/MaszlaG/>
+
 **🔗 GitHub:** <!-- Paste the project repository link here, e.g. https://github.com/username/maszlag / Illeszd be ide a projekt repójának linkjét --> _(link coming soon / link hamarosan)_
 
 ---

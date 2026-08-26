@@ -32,7 +32,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=20260807" />
+    <link rel="stylesheet" href="css/style.css?v=20260825b" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -53,6 +53,59 @@
     </script>
   </head>
   <body>
+    <div class="intro" id="intro" aria-hidden="true">
+      <div class="intro__inner">
+        <svg class="intro__mark" viewBox="0 0 360 176" fill="none" aria-hidden="true">
+          <path class="ln ln-clay" d="M74 56 L44 96 L74 136" />
+          <path class="ln ln-ink" d="M100 132 L100 58 L138 106 L176 58 L176 132" />
+          <path class="ln ln-ink" d="M252 74 A36 36 0 1 0 253 118 L253 96 L226 96" />
+          <path class="ln ln-clay" d="M282 138 L302 54" />
+          <path class="ln ln-clay" d="M314 56 L344 96 L314 136" />
+        </svg>
+        <div class="intro__word">Mászlai&nbsp;Gábor<span class="intro__dot">.</span><span class="intro__caret" aria-hidden="true"></span></div>
+        <div class="intro__tag">Webfejlesztés</div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var intro = document.getElementById("intro");
+        if (!intro) return;
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var seen = false;
+        try { seen = !!sessionStorage.getItem("maszlag-intro"); } catch (e) {}
+        if (seen || reduce) {
+          if (intro.parentNode) intro.parentNode.removeChild(intro);
+          return;
+        }
+        try { sessionStorage.setItem("maszlag-intro", "1"); } catch (e) {}
+        document.body.classList.add("intro-lock");
+        var lns = intro.querySelectorAll(".ln");
+        for (var i = 0; i < lns.length; i++) {
+          var p = lns[i];
+          var L;
+          try { L = p.getTotalLength(); } catch (e) { L = 500; }
+          p.style.strokeDasharray = L;
+          p.style.strokeDashoffset = L;
+          var delay = 260 + i * 240;
+          if (p.animate) {
+            p.animate(
+              [{ strokeDashoffset: L }, { strokeDashoffset: 0 }],
+              { duration: 900, delay: delay, easing: "cubic-bezier(.4,0,.2,1)", fill: "forwards" }
+            );
+          } else {
+            p.style.strokeDashoffset = 0;
+          }
+        }
+        setTimeout(function () {
+          intro.classList.add("is-leaving");
+          document.body.classList.remove("intro-lock");
+          setTimeout(function () {
+            if (intro.parentNode) intro.parentNode.removeChild(intro);
+          }, 1000);
+        }, 3800);
+      })();
+    </script>
+
     <div class="progress" id="prog"></div>
 
     <header id="hdr">
@@ -288,7 +341,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-    <!-- Rendli rendelő-űrlap háttere: Firestore (rendli-202608) + EmailJS visszaigazolás (template_rendli2550) -->
+
     <script>
     (function () {
       var OWNER_UID = "mmYT88r9DSdL0Noy4KQnP0g2d7Z2";
@@ -326,8 +379,8 @@
       function priceFor(s, lang) {
         if (lang === "en") {
           var eur = Number(s.priceEur) || 0;
-          if (eur > 0) return eur;                                   // kézzel megadott euró ár
-          var r = Number(CFG.eurHuf) || 0;                           // különben átszámolás az aktuális árfolyammal
+          if (eur > 0) return eur;
+          var r = Number(CFG.eurHuf) || 0;
           return r > 0 ? Math.round((Number(s.price) || 0) / r) : 0;
         }
         return Number(s.price) || 0;
@@ -511,6 +564,6 @@
       db.getConfig().then(function (cfg) { CFG = cfg || {}; LANG = pickLang(); build(); });
     })();
     </script>
-    <script src="js/script.js?v=20260807"></script>
+    <script src="js/script.js?v=20260825b"></script>
   </body>
 </html>
