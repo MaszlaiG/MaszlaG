@@ -361,8 +361,8 @@
   var mount = document.getElementById("rendli-order-mount");
   var CFG = {}, LANG = "hu";
   var T = {
-    hu: { name:"Név", email:"E-mail", company:"Cég neve", tax:"Adószám", priv:"Magánszemély", biz:"Vállalkozó", choose:"Válassz szolgáltatást…", service:"Munka típusa", phone:"Telefon", budget:"Tervezett keret", message:"Üzenet", submit:"Rendelés elküldése", thanks:"Köszönjük, a rendelést megkaptuk!", err:"Hiba történt a küldéskor, próbáld újra.", needCo:"Vállalkozóként a cég nevét kötelező megadni.", mo:"/ hó", moWord:"havi", moTag:"[Havidíjas szolgáltatás]" },
-    en: { name:"Name", email:"Email", company:"Company name", tax:"VAT number", priv:"Individual", biz:"Company", choose:"Choose a service…", service:"Type of work", phone:"Phone", budget:"Budget", message:"Message", submit:"Send order", thanks:"Thank you, we received your order!", err:"Something went wrong, please try again.", needCo:"Company name is required.", mo:"/ mo", moWord:"monthly", moTag:"[Monthly service]" }
+    hu: { name:"Név", email:"E-mail", company:"Cég neve", tax:"Adószám", priv:"Magánszemély", biz:"Vállalkozó", choose:"Válassz szolgáltatást…", service:"Munka típusa", phone:"Telefon", budget:"Tervezett keret", message:"Üzenet", submit:"Rendelés elküldése", thanks:"Köszönjük, a rendelést megkaptuk!", err:"Hiba történt a küldéskor, próbáld újra.", needCo:"Vállalkozóként a cég nevét kötelező megadni.", badEmail:"Az e-mail cím érvénytelennek tűnik (pl. hiányzó pont a domainben). Kérlek ellenőrizd, hogy oda küldjük a visszaigazolást.", mo:"/ hó", moWord:"havi", moTag:"[Havidíjas szolgáltatás]" },
+    en: { name:"Name", email:"Email", company:"Company name", tax:"VAT number", priv:"Individual", biz:"Company", choose:"Choose a service…", service:"Type of work", phone:"Phone", budget:"Budget", message:"Message", submit:"Send order", thanks:"Thank you, we received your order!", err:"Something went wrong, please try again.", needCo:"Company name is required.", badEmail:"The email address looks invalid (e.g. a missing dot in the domain). Please check it — we send the confirmation there.", mo:"/ mo", moWord:"monthly", moTag:"[Monthly service]" }
   };
   var EMAILJS = { publicKey: "eTf1OffvvcrBwZcAm", serviceId: "service_598rmjv", templateCustomer: "template_megrendelo", templateOwner: "template_tulaj" };
   var M = {
@@ -528,7 +528,13 @@
       var f = fc.fields || {};
       var typeSel = form.querySelector("[name=type]"), price = 0, per = "", locName = g("type");
       if (typeSel && typeSel.selectedOptions && typeSel.selectedOptions[0]) { price = Number(typeSel.selectedOptions[0].getAttribute("data-price")) || 0; per = typeSel.selectedOptions[0].getAttribute("data-period") || ""; locName = typeSel.selectedOptions[0].getAttribute("data-loc") || locName; }
-      var nameV = g("name") || "—", emailV = g("email");
+      var nameV = g("name") || "—", emailV = g("email").trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailV)) {
+        rendliNotify(t.badEmail);
+        var _em = form.querySelector("[name=email]");
+        if (_em) { try { _em.focus(); } catch (x) {} }
+        return;
+      }
       var phoneV = f.phone ? g("phone") : "", budgetV = f.budget ? g("budget") : "", deadlineV = f.deadline ? g("deadline") : "";
       var rawMsg = g("message"), ctV = "", coV = "", taxV = "";
       if (fc.business) {
