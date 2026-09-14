@@ -492,8 +492,8 @@
   };
   var PROJECTS = [
     {
-      id: 'nettli',
-      title: 'Nettli',
+      id: 'crestly',
+      title: 'Crestly',
       year: '2026',
       type: {
         hu: 'Webapp',
@@ -502,20 +502,20 @@
       tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
       images: {
         dark: [
-          'kepek/nettli_attekintes_dark.png',
-          'kepek/nettli_reszveny_dark.png',
-          'kepek/nettli_kripto_dark.png',
-          'kepek/nettli_arany_dark.png',
-          'kepek/nettli_hitel_dark.png',
-          'kepek/nettli_szolgaltatasok_dark.png'
+          'kepek/crestly_attekintes_dark.png',
+          'kepek/crestly_reszveny_dark.png',
+          'kepek/crestly_kripto_dark.png',
+          'kepek/crestly_arany_dark.png',
+          'kepek/crestly_hitel_dark.png',
+          'kepek/crestly_szolgaltatasok_dark.png'
         ],
         light: [
-          'kepek/nettli_attekintes_light.png',
-          'kepek/nettli_reszveny_light.png',
-          'kepek/nettli_kripto_light.png',
-          'kepek/nettli_arany_light.png',
-          'kepek/nettli_hitel_light.png',
-          'kepek/nettli_szolgaltatasok_light.png'
+          'kepek/crestly_attekintes_light.png',
+          'kepek/crestly_reszveny_light.png',
+          'kepek/crestly_kripto_light.png',
+          'kepek/crestly_arany_light.png',
+          'kepek/crestly_hitel_light.png',
+          'kepek/crestly_szolgaltatasok_light.png'
         ]
       },
       short: {
@@ -524,13 +524,13 @@
       },
       details: {
         hu: [
-          'A Nettli egy fiók-alapú, személyes vagyonkezelő webapp, amely egyetlen áttekinthető felületen mutatja meg egy magánszemély teljes nettó vagyonát. Külön fül tartozik minden eszköztípushoz: befektetési arany, részvények, kripto, zálog, hitelek és előfizetések — így a szerteágazó pénzügyek végre egy helyen, összesítve láthatók.',
+          'A Crestly egy fiók-alapú, személyes vagyonkezelő webapp, amely egyetlen áttekinthető felületen mutatja meg egy magánszemély teljes nettó vagyonát. Külön fül tartozik minden eszköztípushoz: befektetési arany, részvények, kripto, zálog, hitelek és előfizetések — így a szerteágazó pénzügyek végre egy helyen, összesítve láthatók.',
           'A vezérlőpult élőben számol: nettó vagyon, befektetett érték, realizált és nem realizált nyereség/veszteség, osztalékráta, havi kiadás és pénzforgalom, valamint az eszközallokáció egy saját rajzolású gyűrűdiagramon. Egy külön blokk kiemeli a közelgő fontos dátumokat is.',
           'Az árfolyamok valós időben, publikus forrásokból érkeznek: kripto (CoinGecko), részvény (Yahoo Finance), deviza (EKB) és arany (XAU spot). A nyereséget/veszteséget a rendszer automatikusan számolja, a devizát pedig akár az adott tranzakció napi árfolyamán váltja át a pontos historikus értékért.',
           'Az adatok a fiókodhoz kötve, a felhőben (Firebase) tárolódnak. A felület teljesen kétnyelvű, a megjelenés világos/sötét/automatikus, és mobil-first: semmi nem lóg ki oldalirányban. Külső diagramkönyvtár és build lépés nélkül.'
         ],
         en: [
-          "Nettli is an account-based personal wealth manager that shows an individual's entire net worth on a single, clear screen. Each asset type gets its own tab — gold, stocks, crypto, pledge, loans and subscriptions — so scattered finances finally sit in one place.",
+          "Crestly is an account-based personal wealth manager that shows an individual's entire net worth on a single, clear screen. Each asset type gets its own tab — gold, stocks, crypto, pledge, loans and subscriptions — so scattered finances finally sit in one place.",
           'The dashboard calculates live: net worth, invested value, realised and unrealised P&L, dividend rate, monthly spend and cash flow, and asset allocation on a custom-drawn donut chart. A dedicated block also surfaces upcoming key dates.',
           "Prices arrive in real time from public sources: crypto (CoinGecko), stocks (Yahoo Finance), FX (ECB) and gold (XAU spot). P&L is computed automatically, and FX can be resolved at each trade's own date for accurate historical value.",
           "Data is stored in the cloud (Firebase), tied to your account. The interface is fully bilingual, appearance is light/dark/auto, and it's mobile-first: nothing overflows sideways. No external charting library and no build step."
@@ -582,8 +582,8 @@
       }
     },
     {
-      id: 'rendli',
-      title: 'Rendli',
+      id: 'kvitli',
+      title: 'Kvitli',
       year: '2026',
       type: {
         hu: 'Webapp',
@@ -592,20 +592,20 @@
       tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
       images: {
         dark: [
-          'kepek/rendli_attekintes_dark.png',
-          'kepek/rendli_megrendelesek_dark.png',
-          'kepek/rendli_projektek_dark.png',
-          'kepek/rendli_ugyfelek_dark.png',
-          'kepek/rendli_szamlak_dark.png',
-          'kepek/rendli_urlap_dark.png'
+          'kepek/kvitli_attekintes_dark.png',
+          'kepek/kvitli_megrendelesek_dark.png',
+          'kepek/kvitli_projektek_dark.png',
+          'kepek/kvitli_ugyfelek_dark.png',
+          'kepek/kvitli_szamlak_dark.png',
+          'kepek/kvitli_urlap_dark.png'
         ],
         light: [
-          'kepek/rendli_attekintes_light.png',
-          'kepek/rendli_megrendelesek_light.png',
-          'kepek/rendli_projektek_light.png',
-          'kepek/rendli_ugyfelek_light.png',
-          'kepek/rendli_szamlak_light.png',
-          'kepek/rendli_urlap_light.png'
+          'kepek/kvitli_attekintes_light.png',
+          'kepek/kvitli_megrendelesek_light.png',
+          'kepek/kvitli_projektek_light.png',
+          'kepek/kvitli_ugyfelek_light.png',
+          'kepek/kvitli_szamlak_light.png',
+          'kepek/kvitli_urlap_light.png'
         ]
       },
       short: {
@@ -614,16 +614,84 @@
       },
       details: {
         hu: [
-          'A Rendli egy fiók-alapú vállalkozáskezelő webalkalmazás szabadúszóknak és kisvállalkozásoknak: egy helyen kezeli a beérkező megkereséseket, a megrendeléseket, a projekteket, az ügyfeleket és a számlákat, valamint a bevételeket és kiadásokat.',
+          'A Kvitli egy fiók-alapú vállalkozáskezelő webalkalmazás szabadúszóknak és kisvállalkozásoknak: egy helyen kezeli a beérkező megkereséseket, a megrendeléseket, a projekteket, az ügyfeleket és a számlákat, valamint a bevételeket és kiadásokat.',
           'Az áttekintő vezérlőpult megmutatja az idei árbevételt, a folyamatban lévő és összes projektet, a közelgő határidőket és a beérkezett megkereséseket — havi bevétel/kiadás diagrammal, projekt-státusz gyűrűdiagrammal és havi pénzforgalom-táblázattal.',
           'Külön fül generál egy beágyazható megrendelő-űrlapot: a beállításokból összeáll a kód, amit elég egyszer a weboldalra illeszteni. A leadott rendelések kézi rögzítés nélkül, élőben megjelennek; a szolgáltatások, mezők és árak testre szabhatók.',
           'A rendelésekhez státuszok, a projektekhez folyamat-nyilvántartás, az ügyfelekhez ügyféltörzs, a pénzügyekhez tételes rögzítés tartozik — így egy munka a megkereséstől a kiállított számláig végigkövethető. Az adatok a felhőben (Firebase) tárolódnak.'
         ],
         en: [
-          'Rendli is an account-based business-management web app for freelancers and small businesses: it handles incoming leads, orders, projects, clients and invoices, plus income and expenses, all in one place.',
+          'Kvitli is an account-based business-management web app for freelancers and small businesses: it handles incoming leads, orders, projects, clients and invoices, plus income and expenses, all in one place.',
           "The overview dashboard shows this year's revenue, ongoing and total projects, upcoming deadlines and incoming leads — with a monthly income/expense chart, a project-status donut and a monthly cash-flow table.",
           'A dedicated tab generates an embeddable order form: the settings assemble into code you paste onto your site once. Submitted orders appear live with no manual entry; services, fields and prices are configurable.',
           'Orders carry statuses, projects have progress tracking, clients form a client base, and finances get itemised recording — so a job can be followed from the first enquiry to the issued invoice. Data is stored in the cloud (Firebase).'
+        ]
+      }
+    },
+    {
+      id: 'bd-hairstudio',
+      title: 'B&D Hairstudio',
+      year: '2026',
+      type: {
+        hu: 'Weboldal',
+        en: 'Website'
+      },
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      images: {
+        light: [
+          'kepek/bd_hero_light.png',
+          'kepek/bd_galeria_light.png',
+          'kepek/bd_arak_light.png',
+          'kepek/bd_kapcsolat_light.png'
+        ]
+      },
+      short: {
+        hu: 'Bemutatkozó weboldal egy hajdúszoboszlói fodrászatnak — merész, modern arculat élénk zöld akcentussal, galériával és közvetlen foglalással.',
+        en: 'A presentation site for a hair studio in Hajdúszoboszló — a bold, modern identity with a vivid green accent, a gallery and direct booking.'
+      },
+      details: {
+        hu: [
+          'A B&D Hairstudio egy hajdúszoboszlói fodrászat/borbély bemutatkozó weboldala. Egyoldalas, statikus oldal, amely erős első benyomást ad: nagy, geometrikus nagybetűs címsorok, élénk zöld akcentus és világos papír alap.',
+          'A tartalom a szolgáltatásokat, a galériát és az árakat mutatja be, majd közvetlen foglalásra terel — a foglalás és a kapcsolat a stúdió Facebook és TikTok csatornáin fut, saját backend nélkül.',
+          'Mobil-first reszponzív, hamburger-menüvel; futószöveg és görgetéskor megjelenő animációk adják a lendületet. Tiszta HTML, CSS és JavaScript, keretrendszer és build lépés nélkül.'
+        ],
+        en: [
+          'B&D Hairstudio is the presentation website of a hair studio/barber in Hajdúszoboszló. A one-page, static site that makes a strong first impression: large geometric all-caps headings, a vivid green accent and a light paper base.',
+          'The content shows the services, the gallery and the prices, then nudges toward direct booking — booking and contact run on the studio Facebook and TikTok channels, with no backend of its own.',
+          'Mobile-first responsive, with a hamburger menu; a marquee ticker and reveal-on-scroll animations add momentum. Plain HTML, CSS and JavaScript, no framework and no build step.'
+        ]
+      }
+    },
+    {
+      id: 'panetti',
+      title: 'Panetti Photography',
+      year: '2026',
+      type: {
+        hu: 'Weboldal',
+        en: 'Website'
+      },
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      images: {
+        light: [
+          'kepek/panetti_hero_light.png',
+          'kepek/panetti_rolam_light.png',
+          'kepek/panetti_galeria_light.png',
+          'kepek/panetti_kapcsolat_light.png'
+        ]
+      },
+      short: {
+        hu: 'Elegáns portfólió- és foglaló-oldal egy fotográfusnak — szűrhető galéria lightboxszal, animált nyitó-logó, kétnyelvű, arany-krém arculat.',
+        en: 'An elegant portfolio & booking site for a photographer — a filterable gallery with a lightbox, an animated intro logo, bilingual, cream-and-gold identity.'
+      },
+      details: {
+        hu: [
+          'A Panetti Photography Palicskó Anett fotográfus (Nyírbátor) bemutatkozó és foglaló weboldala — kismama, portré, esküvő, családi és gyermek fotózás. Elegáns, letisztult arculat: krém alap, arany és burgundi akcentus, klasszikus serif tipográfiával.',
+          'A központi elem a kategóriánként szűrhető galéria lightboxszal; egy animált nyitó-logó fogadja a látogatót, amely kirajzolódik, majd finoman átúszik a tartalomba.',
+          'Teljesen kétnyelvű (HU/EN), mobil-first reszponzív; a kapcsolat mailto: űrlappal, saját backend nélkül. Tiszta HTML, CSS és JavaScript.'
+        ],
+        en: [
+          'Panetti Photography is the portfolio and booking website of photographer Anett Palicskó (Nyírbátor) — maternity, portrait, wedding, family and child photography. An elegant, refined identity: a cream base, gold and burgundy accents, with classic serif typography.',
+          'The centrepiece is a category-filterable gallery with a lightbox; an animated intro logo greets the visitor, drawing itself and then gently dissolving into the content.',
+          'Fully bilingual (HU/EN), mobile-first responsive; contact via a mailto: form, with no backend of its own. Plain HTML, CSS and JavaScript.'
         ]
       }
     }
@@ -997,7 +1065,7 @@
     lbImages = [],
     lbIndex = 0;
   var curProject = null,
-    galTheme = 'dark';
+    galTheme = 'light';
   var GAL_LBL = {
     light: {
       hu: 'Világos',
@@ -1010,15 +1078,15 @@
   };
   function projThemes(p) {
     var t = [];
-    if (p.images && p.images.dark && p.images.dark.length) t.push('dark');
     if (p.images && p.images.light && p.images.light.length) t.push('light');
+    if (p.images && p.images.dark && p.images.dark.length) t.push('dark');
     return t;
   }
   function projImgs(p, theme) {
     return (p.images && (p.images[theme] || p.images.dark || p.images.light)) || [];
   }
   function projThumb(p) {
-    return projImgs(p, 'dark')[0] || projImgs(p, 'light')[0] || '';
+    return projImgs(p, 'light')[0] || projImgs(p, 'dark')[0] || '';
   }
   function themeToggleHTML(p) {
     var ths = projThemes(p);
@@ -1099,7 +1167,7 @@
     if (!p) return;
     curProject = p;
     var ths = projThemes(p);
-    galTheme = ths.indexOf('dark') >= 0 ? 'dark' : 'light';
+    galTheme = ths.indexOf('light') >= 0 ? 'light' : 'dark';
     var paras = (p.details[LANG] || p.details.hu)
       .map(function (t) {
         return '<p>' + esc(t) + '</p>';

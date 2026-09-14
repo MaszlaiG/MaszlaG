@@ -237,7 +237,7 @@
             <span class="ix">— 03 <b data-i18n="ix.work">/ Munkáim</b></span>
             <h2 data-i18n-html="work.h2">Kiválasztott <em>projektek</em></h2>
           </div>
-          <div class="works" id="works" data-limit="3"></div>
+          <div class="works" id="works" data-limit="5"></div>
           <div class="works-more reveal">
             <a href="#osszes-munka" class="btn"
               ><span data-i18n="work.all">Összes munka megtekintése</span> <span class="a">→</span></a
@@ -400,8 +400,8 @@
   function priceFor(s, lang) {
     if (lang === "en") {
       var eur = Number(s.priceEur) || 0;
-      if (eur > 0) return eur;                                   // kézzel megadott euró ár
-      var r = Number(CFG.eurHuf) || 0;                           // különben átszámolás az aktuális árfolyammal
+      if (eur > 0) return eur;
+      var r = Number(CFG.eurHuf) || 0;
       return r > 0 ? Math.round((Number(s.price) || 0) / r) : 0;
     }
     return Number(s.price) || 0;
@@ -465,7 +465,7 @@
     if (telC) btns += '<a href="tel:' + telC + '" style="display:inline-block;background:#3b5bdb;color:#ffffff;font-weight:700;font-size:14px;padding:12px 22px;border-radius:10px;text-decoration:none;margin:0 8px 8px 0">&#128222; ' + callLbl + '</a>';
     if (data.email) btns += '<a href="mailto:' + data.email + '" style="display:inline-block;background:#ffffff;color:#3b5bdb;font-weight:700;font-size:14px;padding:10px 20px;border:2px solid #3b5bdb;border-radius:10px;text-decoration:none;margin:0 8px 8px 0">&#9993; ' + replyLbl + '</a>';
     var ownerActions = btns ? '<div style="margin:0 0 4px 0">' + btns + '</div>' : "";
-    // Ügyfél-oldali gombok: az ügyfél a VÁLLALKOZÁST hívja/írja (biz telefon/e-mail).
+
     var bizPhone = notify.bizPhone || "", bizEmail = notify.bizEmail || owner || "";
     var telB = bizPhone ? String(bizPhone).replace(/[^\d+]/g, "") : "";
     var cbtns = "";
@@ -473,13 +473,13 @@
     if (bizEmail) cbtns += '<a href="mailto:' + bizEmail + '" style="display:inline-block;background:#ffffff;color:#3b5bdb;font-weight:700;font-size:14px;padding:10px 20px;border:2px solid #3b5bdb;border-radius:10px;text-decoration:none;margin:0 8px 8px 0">&#9993; ' + replyLbl + '</a>';
     var custActions = cbtns ? '<div style="margin:0 0 4px 0">' + cbtns + '</div>' : "";
     if (data.email) {
-      sendMail(EMAILJS.templateCustomer, { to_email: data.email, to_name: data.name || "", from_name: biz || "Rendli",
-        brand_initial: initialOf(biz || "Rendli"), tagline: m.cTag, reply_to: bizEmail || owner || "",
+      sendMail(EMAILJS.templateCustomer, { to_email: data.email, to_name: data.name || "", from_name: biz || "Kvitli",
+        brand_initial: initialOf(biz || "Kvitli"), tagline: m.cTag, reply_to: bizEmail || owner || "",
         subject: m.cSub + svc, heading: m.cHi, intro: m.cIn, details: rows, footer_note: m.cFoot, actions: custActions });
     }
     if (owner) {
-      sendMail(EMAILJS.templateOwner, { to_email: owner, to_name: biz || "", from_name: "Rendli",
-        brand_initial: "R", tagline: m.oTag, reply_to: data.email || "",
+      sendMail(EMAILJS.templateOwner, { to_email: owner, to_name: biz || "", from_name: "Kvitli",
+        brand_initial: "K", tagline: m.oTag, reply_to: data.email || "",
         subject: m.oSub + svc, heading: m.oHi, intro: m.oIn, details: rows, footer_note: m.oFoot, actions: ownerActions });
     }
   }
@@ -566,7 +566,6 @@
   db.getConfig().then(function (cfg) { CFG = cfg || {}; LANG = pickLang(); build(); });
 })();
 </script>
-
 
     <script src="js/script.js?v=20260825b"></script>
   </body>
