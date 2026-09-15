@@ -361,17 +361,17 @@
   var mount = document.getElementById("rendli-order-mount");
   var CFG = {}, LANG = "hu";
   var T = {
-    hu: { name:"Név", email:"E-mail", company:"Cég neve", tax:"Adószám", priv:"Magánszemély", biz:"Vállalkozó", choose:"Válassz szolgáltatást…", service:"Munka típusa", phone:"Telefon", budget:"Tervezett keret", message:"Üzenet", submit:"Rendelés elküldése", thanks:"Köszönjük, a rendelést megkaptuk!", err:"Hiba történt a küldéskor, próbáld újra.", needCo:"Vállalkozóként a cég nevét kötelező megadni.", badEmail:"Az e-mail cím érvénytelennek tűnik (pl. hiányzó pont a domainben). Kérlek ellenőrizd, hogy oda küldjük a visszaigazolást.", mo:"/ hó", moWord:"havi", moTag:"[Havidíjas szolgáltatás]" },
-    en: { name:"Name", email:"Email", company:"Company name", tax:"VAT number", priv:"Individual", biz:"Company", choose:"Choose a service…", service:"Type of work", phone:"Phone", budget:"Budget", message:"Message", submit:"Send order", thanks:"Thank you, we received your order!", err:"Something went wrong, please try again.", needCo:"Company name is required.", badEmail:"The email address looks invalid (e.g. a missing dot in the domain). Please check it — we send the confirmation there.", mo:"/ mo", moWord:"monthly", moTag:"[Monthly service]" }
+    hu: { name:"Név", email:"E-mail", company:"Cég neve", tax:"Adószám", address:"Székhely", priv:"Magánszemély", biz:"Vállalkozó", choose:"Válassz szolgáltatást…", service:"Munka típusa", phone:"Telefon", budget:"Tervezett keret", message:"Üzenet", submit:"Rendelés elküldése", thanks:"Köszönjük, a rendelést megkaptuk!", err:"Hiba történt a küldéskor, próbáld újra.", needCo:"Vállalkozóként a cég nevét kötelező megadni.", badEmail:"Az e-mail cím érvénytelennek tűnik (pl. hiányzó pont a domainben). Kérlek ellenőrizd, hogy oda küldjük a visszaigazolást.", mo:"/ hó", moWord:"havi", moTag:"[Havidíjas szolgáltatás]" },
+    en: { name:"Name", email:"Email", company:"Company name", tax:"VAT number", address:"Registered seat", priv:"Individual", biz:"Company", choose:"Choose a service…", service:"Type of work", phone:"Phone", budget:"Budget", message:"Message", submit:"Send order", thanks:"Thank you, we received your order!", err:"Something went wrong, please try again.", needCo:"Company name is required.", badEmail:"The email address looks invalid (e.g. a missing dot in the domain). Please check it — we send the confirmation there.", mo:"/ mo", moWord:"monthly", moTag:"[Monthly service]" }
   };
   var EMAILJS = { publicKey: "eTf1OffvvcrBwZcAm", serviceId: "service_598rmjv", templateCustomer: "template_megrendelo", templateOwner: "template_tulaj" };
   var M = {
     hu: { cSub:"Visszaigazolás — ", cHi:"Köszönjük a megrendelésed!", cIn:"Megkaptuk a rendelésed, hamarosan felvesszük veled a kapcsolatot. Az összesítés:", cTag:"Megrendelés visszaigazolás", cFoot:"Kérdésed van? Egyszerűen válaszolj erre az e-mailre — a levelet a rendszer erre a címre irányítja.",
           oSub:"Új megrendelés — ", oHi:"Új megrendelés érkezett", oIn:"Az alábbi rendelés futott be a weboldalad űrlapján keresztül:", oTag:"Új megrendelés", oFoot:"Válaszolj erre az e-mailre, és közvetlenül az ügyfélnek írsz — a levél az ő címére megy.",
-          svc:"Szolgáltatás", price:"Ár", date:"Dátum", nm:"Név", em:"E-mail", ph:"Telefon", msg:"Üzenet", deadline:"Kívánt határidő", budget:"Tervezett keret", ctype:"Ügyféltípus", comp:"Cég", tax:"Adószám", mo:"/ hó" },
+          svc:"Szolgáltatás", price:"Ár", date:"Dátum", nm:"Név", em:"E-mail", ph:"Telefon", msg:"Üzenet", deadline:"Kívánt határidő", budget:"Tervezett keret", ctype:"Ügyféltípus", comp:"Cég", tax:"Adószám", addr:"Székhely", mo:"/ hó" },
     en: { cSub:"Confirmation — ", cHi:"Thank you for your order!", cIn:"We've received your order and will get back to you shortly. Here's the summary:", cTag:"Order confirmation", cFoot:"Questions? Just reply to this email — it goes straight to us.",
           oSub:"New order — ", oHi:"New order received", oIn:"The following order came in through your website form:", oTag:"New order", oFoot:"Reply to this email to write directly to the customer — it goes to their address.",
-          svc:"Service", price:"Price", date:"Date", nm:"Name", em:"Email", ph:"Phone", msg:"Message", deadline:"Deadline", budget:"Budget", ctype:"Client type", comp:"Company", tax:"VAT number", mo:"/ mo" }
+          svc:"Service", price:"Price", date:"Date", nm:"Name", em:"Email", ph:"Phone", msg:"Message", deadline:"Deadline", budget:"Budget", ctype:"Client type", comp:"Company", tax:"VAT number", addr:"Registered seat", mo:"/ mo" }
   };
   function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
   function rendliNotify(msg) {
@@ -396,7 +396,7 @@
     ov.appendChild(card); document.body.appendChild(ov);
     try { btn.focus(); } catch (e) {}
   }
-  function ft(n, lang) { n = Math.round(Number(n) || 0); return lang === "en" ? "€" + n.toLocaleString("hu-HU") : n.toLocaleString("hu-HU") + " Ft"; }
+  function ft(n, lang) { n = Math.round(Number(n) || 0); return lang === "en" ? "€" + n.toLocaleString("hu-HU", { useGrouping: true }) : n.toLocaleString("hu-HU", { useGrouping: true }) + " Ft"; }
   function priceFor(s, lang) {
     if (lang === "en") {
       var eur = Number(s.priceEur) || 0;
@@ -456,7 +456,7 @@
     var rows =
       erow(m.nm, data.name) + erowMail(m.em, data.email) + erowPhone(m.ph, x.phone) +
       erow(m.svc, svc) + erow(m.price, priceTxt) +
-      erow(m.ctype, x.clientType) + erow(m.comp, x.company) + erow(m.tax, x.tax) +
+      erow(m.ctype, x.clientType) + erow(m.comp, x.company) + erow(m.tax, x.tax) + erow(m.addr, x.address) +
       erow(m.deadline, x.deadline) + erow(m.budget, x.budget) +
       erow(m.msg, x.message) + erow(m.date, data.date);
     var telC = x.phone ? String(x.phone).replace(/[^\d+]/g, "") : "";
@@ -491,7 +491,7 @@
     h += '<input name="email" type="email" placeholder="' + esc(t.email) + ' *" required>';
     if (fc.business) {
       h += '<select name="clientType"><option>' + esc(t.priv) + '</option><option>' + esc(t.biz) + '</option></select>';
-      h += '<span data-biz style="display:none"><input name="companyName" placeholder="' + esc(t.company) + ' *"><input name="taxNumber" placeholder="' + esc(t.tax) + '"></span>';
+      h += '<span data-biz style="display:none"><input name="companyName" placeholder="' + esc(t.company) + ' *"><input name="taxNumber" placeholder="' + esc(t.tax) + '"><input name="address" placeholder="' + esc(t.address) + '"></span>';
     }
     if (services.length) {
       h += '<select name="type" required><option value="">' + esc(t.choose) + '</option>';
@@ -536,11 +536,11 @@
         return;
       }
       var phoneV = f.phone ? g("phone") : "", budgetV = f.budget ? g("budget") : "", deadlineV = f.deadline ? g("deadline") : "";
-      var rawMsg = g("message"), ctV = "", coV = "", taxV = "";
+      var rawMsg = g("message"), ctV = "", coV = "", taxV = "", addrV = "";
       if (fc.business) {
         ctV = g("clientType") || t.priv;
         if (ctV === t.biz && !g("companyName")) { rendliNotify(t.needCo); return; }
-        coV = g("companyName"); taxV = g("taxNumber");
+        coV = g("companyName"); taxV = g("taxNumber"); addrV = g("address");
       }
       var msg = rawMsg;
       if (per === "monthly") msg += (msg ? "\n\n" : "") + t.moTag;
@@ -549,13 +549,14 @@
       var data = { name: nameV, email: emailV, type: g("type"), key: KEY, status: "uj", price: price, currency: currency, date: new Date().toISOString().slice(0, 10), createdAt: Date.now() };
       if (currency === "EUR") data.fxRate = Number(CFG.eurHuf) || 0;
       if (fc.business) data.clientType = (ctV === t.biz) ? "Vállalkozó" : "Magánszemély";
+      if (fc.business && ctV === t.biz) { if (coV) data.company = coV; if (taxV) data.tax = taxV; if (addrV) data.address = addrV; }
       if (f.phone)    data.phone = phoneV;
       if (f.budget)   data.budget = budgetV;
       if (f.deadline) data.deadline = deadlineV;
       data.message = msg;
       db.addInbox(data)
         .then(function () {
-          try { sendConfirmations(data, { locName: locName, phone: phoneV, budget: budgetV, deadline: deadlineV, clientType: (fc.business ? ctV : ""), company: coV, tax: taxV, message: rawMsg, period: per }); } catch (e) {}
+          try { sendConfirmations(data, { locName: locName, phone: phoneV, budget: budgetV, deadline: deadlineV, clientType: (fc.business ? ctV : ""), company: coV, tax: taxV, address: addrV, message: rawMsg, period: per }); } catch (e) {}
           form.reset(); rendliNotify(t.thanks);
         })
         .catch(function (err) { console.error(err); rendliNotify(t.err); });

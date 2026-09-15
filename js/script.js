@@ -492,8 +492,8 @@
   };
   var PROJECTS = [
     {
-      id: 'crestly',
-      title: 'Crestly',
+      id: 'kvitli',
+      title: 'Kvitli',
       year: '2026',
       type: {
         hu: 'Webapp',
@@ -502,38 +502,106 @@
       tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
       images: {
         dark: [
-          'kepek/crestly_attekintes_dark.png',
-          'kepek/crestly_reszveny_dark.png',
-          'kepek/crestly_kripto_dark.png',
-          'kepek/crestly_arany_dark.png',
-          'kepek/crestly_hitel_dark.png',
-          'kepek/crestly_szolgaltatasok_dark.png'
+          'kepek/kvitli_attekintes_dark.png',
+          'kepek/kvitli_megrendelesek_dark.png',
+          'kepek/kvitli_projektek_dark.png',
+          'kepek/kvitli_ugyfelek_dark.png',
+          'kepek/kvitli_szamlak_dark.png',
+          'kepek/kvitli_urlap_dark.png'
         ],
         light: [
-          'kepek/crestly_attekintes_light.png',
-          'kepek/crestly_reszveny_light.png',
-          'kepek/crestly_kripto_light.png',
-          'kepek/crestly_arany_light.png',
-          'kepek/crestly_hitel_light.png',
-          'kepek/crestly_szolgaltatasok_light.png'
+          'kepek/kvitli_attekintes_light.png',
+          'kepek/kvitli_megrendelesek_light.png',
+          'kepek/kvitli_projektek_light.png',
+          'kepek/kvitli_ugyfelek_light.png',
+          'kepek/kvitli_szamlak_light.png',
+          'kepek/kvitli_urlap_light.png'
         ]
       },
       short: {
-        hu: 'Fiók-alapú személyi pénzügyi és vagyonkezelő webapp élő árfolyamokkal. Arany, részvény, kripto, hitel és előfizetés egyetlen áttekinthető felületen, saját rajzolású diagramokkal.',
-        en: 'An account-based personal finance & wealth manager with live prices. Gold, stocks, crypto, loans and subscriptions on one clear screen, with custom-drawn charts.'
+        hu: 'Vállalkozáskezelő szabadúszóknak: megkeresések, megrendelések, projektek, ügyfelek, számlák és pénzügyek egy helyen — beágyazható megrendelő-űrlappal.',
+        en: 'A business manager for freelancers: leads, orders, projects, clients, invoices and finances in one place — with an embeddable order form.'
       },
       details: {
         hu: [
-          'A Crestly egy fiók-alapú, személyes vagyonkezelő webapp, amely egyetlen áttekinthető felületen mutatja meg egy magánszemély teljes nettó vagyonát. Külön fül tartozik minden eszköztípushoz: befektetési arany, részvények, kripto, zálog, hitelek és előfizetések — így a szerteágazó pénzügyek végre egy helyen, összesítve láthatók.',
-          'A vezérlőpult élőben számol: nettó vagyon, befektetett érték, realizált és nem realizált nyereség/veszteség, osztalékráta, havi kiadás és pénzforgalom, valamint az eszközallokáció egy saját rajzolású gyűrűdiagramon. Egy külön blokk kiemeli a közelgő fontos dátumokat is.',
-          'Az árfolyamok valós időben, publikus forrásokból érkeznek: kripto (CoinGecko), részvény (Yahoo Finance), deviza (EKB) és arany (XAU spot). A nyereséget/veszteséget a rendszer automatikusan számolja, a devizát pedig akár az adott tranzakció napi árfolyamán váltja át a pontos historikus értékért.',
-          'Az adatok a fiókodhoz kötve, a felhőben (Firebase) tárolódnak. A felület teljesen kétnyelvű, a megjelenés világos/sötét/automatikus, és mobil-first: semmi nem lóg ki oldalirányban. Külső diagramkönyvtár és build lépés nélkül.'
+          {
+            h: 'Probléma',
+            p: 'A szabadúszók és kisvállalkozók megkeresései, megrendelései, projektjei, ügyfelei és számlái jellemzően szétszórva élnek — e-mailben, táblázatokban, füzetben. Így könnyű elveszíteni egy leadet vagy lecsúszni egy határidőről, és nincs valós kép a bevételről.'
+          },
+          {
+            h: 'Megoldás',
+            p: 'Fiók-alapú vállalkozáskezelő webapp, amely mindezt egy helyre hozza. Egy külön fül beágyazható megrendelő-űrlapot generál (a kódot elég egyszer a weboldalra illeszteni), a leadott rendelések kézi rögzítés nélkül, élőben, státuszokkal jelennek meg; a projektekhez folyamat-nyilvántartás, az ügyfelekhez ügyféltörzs, a pénzügyekhez tételes bevétel/kiadás tartozik. Az adatok a felhőben (Firebase) tárolódnak.'
+          },
+          {
+            h: 'Eredmény',
+            p: 'Egy munka a megkereséstől a kiállított számláig végigkövethető egyetlen felületen. Az áttekintő vezérlőpult azonnal mutatja az idei árbevételt, a folyamatban lévő projekteket, a közelgő határidőket és az új megkereséseket — havi bevétel/kiadás diagrammal, projekt-státusz gyűrűvel és pénzforgalom-táblázattal.'
+          }
         ],
         en: [
-          "Crestly is an account-based personal wealth manager that shows an individual's entire net worth on a single, clear screen. Each asset type gets its own tab — gold, stocks, crypto, pledge, loans and subscriptions — so scattered finances finally sit in one place.",
-          'The dashboard calculates live: net worth, invested value, realised and unrealised P&L, dividend rate, monthly spend and cash flow, and asset allocation on a custom-drawn donut chart. A dedicated block also surfaces upcoming key dates.',
-          "Prices arrive in real time from public sources: crypto (CoinGecko), stocks (Yahoo Finance), FX (ECB) and gold (XAU spot). P&L is computed automatically, and FX can be resolved at each trade's own date for accurate historical value.",
-          "Data is stored in the cloud (Firebase), tied to your account. The interface is fully bilingual, appearance is light/dark/auto, and it's mobile-first: nothing overflows sideways. No external charting library and no build step."
+          {
+            h: 'Problem',
+            p: 'For freelancers and small businesses, leads, orders, projects, clients and invoices usually live scattered across email, spreadsheets and notebooks — it is easy to lose a lead or miss a deadline, with no real picture of revenue.'
+          },
+          {
+            h: 'Solution',
+            p: 'An account-based business-management web app that brings it all into one place. A dedicated tab generates an embeddable order form (paste the code onto your site once), submitted orders appear live with statuses and no manual entry; projects get progress tracking, clients form a client base, and finances get itemised income/expense records. Data is stored in the cloud (Firebase).'
+          },
+          {
+            h: 'Result',
+            p: 'A job can be followed from the first enquiry to the issued invoice on a single screen. The overview dashboard instantly shows this year’s revenue, ongoing projects, upcoming deadlines and new leads — with a monthly income/expense chart, a project-status donut and a cash-flow table.'
+          }
+        ]
+      }
+    },
+    {
+      id: 'bd-hairstudio',
+      title: 'B&D Hairstudio',
+      year: '2026',
+      type: {
+        hu: 'Weboldal',
+        en: 'Website'
+      },
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      images: {
+        light: [
+          'kepek/bd_hero_light.png',
+          'kepek/bd_galeria_light.png',
+          'kepek/bd_arak_light.png',
+          'kepek/bd_kapcsolat_light.png'
+        ]
+      },
+      short: {
+        hu: 'Bemutatkozó weboldal egy hajdúszoboszlói fodrászatnak — merész, modern arculat élénk zöld akcentussal, galériával és közvetlen foglalással.',
+        en: 'A presentation site for a hair studio in Hajdúszoboszló — a bold, modern identity with a vivid green accent, a gallery and direct booking.'
+      },
+      details: {
+        hu: [
+          {
+            h: 'Probléma',
+            p: 'Egy helyi fodrászat/borbély online jellemzően csak egy közösségi oldalon él — nincs egy önálló, jól mutató felület, amely rendezetten bemutatja a szolgáltatásokat és az árakat, és foglalásra terel.'
+          },
+          {
+            h: 'Megoldás',
+            p: 'Egyoldalas, statikus bemutatkozó weboldal merész, modern arculattal: nagy, geometrikus nagybetűs címsorok, élénk zöld akcentus, futószöveg és görgetésre megjelenő animációk. A szolgáltatások, a galéria és az árak után közvetlen foglalásra terel — a foglalás és a kapcsolat a stúdió Facebook és TikTok csatornáin fut, saját backend nélkül.'
+          },
+          {
+            h: 'Eredmény',
+            p: 'Egy gyors, mobil-first oldal, amely erős első benyomást ad, hamburger-menüvel és sima navigációval, és szerver nélkül bármelyik tárhelyre feltölthető. Kész, egyedi arculat, amelyet a stúdió azonnal használatba vehet.'
+          }
+        ],
+        en: [
+          {
+            h: 'Problem',
+            p: 'A local hair studio/barber usually lives online only on a social page — there is no standalone, good-looking site that shows the services and prices in an organised way and drives bookings.'
+          },
+          {
+            h: 'Solution',
+            p: 'A one-page static presentation site with a bold, modern identity: large geometric all-caps headings, a vivid green accent, a marquee ticker and reveal-on-scroll animations. After the services, gallery and prices it nudges toward direct booking — running on the studio’s Facebook and TikTok channels, with no backend.'
+          },
+          {
+            h: 'Result',
+            p: 'A fast, mobile-first site that makes a strong first impression, with a hamburger menu and smooth navigation, and uploads to any host with no server. A finished, custom identity the studio can put to use straight away.'
+          }
         ]
       }
     },
@@ -568,96 +636,32 @@
       },
       details: {
         hu: [
-          'A Slotli egy fiók-alapú időpontfoglaló rendszer, amely két feladatot lát el: egy admin-felületen élőben követi a beérkező foglalásokat, és generál egy beágyazható foglaló-widgetet, amelyet a vállalkozó a saját weboldalára illeszthet — a kódot elég egyszer beilleszteni.',
-          'A beállító fülön megadható minden szolgáltatás időtartammal és árral, a napi nyitvatartás (akár több idősávval, például ebédszünettel), valamint a sávhossz. A widget ezekből számolja ki a felkínált időpontokat, és a látogató csak a ténylegesen szabad sávokból választhat.',
-          'A foglalás azonnal, ütközésvédelemmel lefoglalja a sávot: ha ketten egyszerre ugyanarra az időpontra foglalnának, a második nem megy át. A beérkező foglalások élőben, státuszokkal jelennek meg; egy lemondás visszaszabadítja a sávot.',
-          'A felület teljesen kétnyelvű, összecsukható oldalsávval, és tartalmaz egy áttekintő nézetet az utolsó 12 hónap bevétel-diagramjával. Az adatok a felhőben (Firebase) tárolódnak, így a foglalások élőben szinkronizálódnak.'
+          {
+            h: 'Probléma',
+            p: 'A telefonon és üzenetben érkező időpontfoglalás időrabló és hibázós: dupla foglalások, oda-vissza egyeztetés, és nincs élő rálátás a napra. Egy kisvállalkozásnak ritkán éri meg drága foglalórendszert bérelni.'
+          },
+          {
+            h: 'Megoldás',
+            p: 'Fiók-alapú időpontfoglaló, amely két dolgot csinál: az adminon élőben követi a foglalásokat, és generál egy beágyazható foglaló-widgetet a vállalkozó saját weboldalára (a kódot elég egyszer beilleszteni). A szolgáltatások, a nyitvatartás (akár ebédszünettel) és a sávhossz alapján számolja a szabad időpontokat, ütközésvédelemmel — két egyidejű foglalásból a második nem megy át.'
+          },
+          {
+            h: 'Eredmény',
+            p: 'A látogató csak ténylegesen szabad sávot foglalhat, a foglalások élőben, státuszokkal jelennek meg, a lemondás pedig visszaszabadítja a sávot. Egy áttekintő nézet az utolsó 12 hónap bevételét is mutatja. Az adatok a felhőben (Firebase) élőben szinkronizálódnak.'
+          }
         ],
         en: [
-          'Slotli is an account-based booking system that does two jobs: an admin panel tracks incoming bookings live, and it generates an embeddable booking widget the owner can drop onto their own website — paste the code once.',
-          'On the setup tab you define each service with its duration and price, the daily opening hours (with several windows, e.g. a lunch break) and the slot length. The widget computes the offered times from these, and visitors can only pick genuinely free slots.',
-          'A booking reserves the slot immediately, with collision protection: if two people try the same time at once, the second one fails. Incoming bookings show up live with statuses; cancelling frees the slot again.',
-          'The interface is fully bilingual with a collapsible sidebar, and includes an overview with a last-12-months revenue chart. Data is stored in the cloud (Firebase), so bookings sync live.'
-        ]
-      }
-    },
-    {
-      id: 'kvitli',
-      title: 'Kvitli',
-      year: '2026',
-      type: {
-        hu: 'Webapp',
-        en: 'Web app'
-      },
-      tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-      images: {
-        dark: [
-          'kepek/kvitli_attekintes_dark.png',
-          'kepek/kvitli_megrendelesek_dark.png',
-          'kepek/kvitli_projektek_dark.png',
-          'kepek/kvitli_ugyfelek_dark.png',
-          'kepek/kvitli_szamlak_dark.png',
-          'kepek/kvitli_urlap_dark.png'
-        ],
-        light: [
-          'kepek/kvitli_attekintes_light.png',
-          'kepek/kvitli_megrendelesek_light.png',
-          'kepek/kvitli_projektek_light.png',
-          'kepek/kvitli_ugyfelek_light.png',
-          'kepek/kvitli_szamlak_light.png',
-          'kepek/kvitli_urlap_light.png'
-        ]
-      },
-      short: {
-        hu: 'Vállalkozáskezelő szabadúszóknak: megkeresések, megrendelések, projektek, ügyfelek, számlák és pénzügyek egy helyen — beágyazható megrendelő-űrlappal.',
-        en: 'A business manager for freelancers: leads, orders, projects, clients, invoices and finances in one place — with an embeddable order form.'
-      },
-      details: {
-        hu: [
-          'A Kvitli egy fiók-alapú vállalkozáskezelő webalkalmazás szabadúszóknak és kisvállalkozásoknak: egy helyen kezeli a beérkező megkereséseket, a megrendeléseket, a projekteket, az ügyfeleket és a számlákat, valamint a bevételeket és kiadásokat.',
-          'Az áttekintő vezérlőpult megmutatja az idei árbevételt, a folyamatban lévő és összes projektet, a közelgő határidőket és a beérkezett megkereséseket — havi bevétel/kiadás diagrammal, projekt-státusz gyűrűdiagrammal és havi pénzforgalom-táblázattal.',
-          'Külön fül generál egy beágyazható megrendelő-űrlapot: a beállításokból összeáll a kód, amit elég egyszer a weboldalra illeszteni. A leadott rendelések kézi rögzítés nélkül, élőben megjelennek; a szolgáltatások, mezők és árak testre szabhatók.',
-          'A rendelésekhez státuszok, a projektekhez folyamat-nyilvántartás, az ügyfelekhez ügyféltörzs, a pénzügyekhez tételes rögzítés tartozik — így egy munka a megkereséstől a kiállított számláig végigkövethető. Az adatok a felhőben (Firebase) tárolódnak.'
-        ],
-        en: [
-          'Kvitli is an account-based business-management web app for freelancers and small businesses: it handles incoming leads, orders, projects, clients and invoices, plus income and expenses, all in one place.',
-          "The overview dashboard shows this year's revenue, ongoing and total projects, upcoming deadlines and incoming leads — with a monthly income/expense chart, a project-status donut and a monthly cash-flow table.",
-          'A dedicated tab generates an embeddable order form: the settings assemble into code you paste onto your site once. Submitted orders appear live with no manual entry; services, fields and prices are configurable.',
-          'Orders carry statuses, projects have progress tracking, clients form a client base, and finances get itemised recording — so a job can be followed from the first enquiry to the issued invoice. Data is stored in the cloud (Firebase).'
-        ]
-      }
-    },
-    {
-      id: 'bd-hairstudio',
-      title: 'B&D Hairstudio',
-      year: '2026',
-      type: {
-        hu: 'Weboldal',
-        en: 'Website'
-      },
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      images: {
-        light: [
-          'kepek/bd_hero_light.png',
-          'kepek/bd_galeria_light.png',
-          'kepek/bd_arak_light.png',
-          'kepek/bd_kapcsolat_light.png'
-        ]
-      },
-      short: {
-        hu: 'Bemutatkozó weboldal egy hajdúszoboszlói fodrászatnak — merész, modern arculat élénk zöld akcentussal, galériával és közvetlen foglalással.',
-        en: 'A presentation site for a hair studio in Hajdúszoboszló — a bold, modern identity with a vivid green accent, a gallery and direct booking.'
-      },
-      details: {
-        hu: [
-          'A B&D Hairstudio egy hajdúszoboszlói fodrászat/borbély bemutatkozó weboldala. Egyoldalas, statikus oldal, amely erős első benyomást ad: nagy, geometrikus nagybetűs címsorok, élénk zöld akcentus és világos papír alap.',
-          'A tartalom a szolgáltatásokat, a galériát és az árakat mutatja be, majd közvetlen foglalásra terel — a foglalás és a kapcsolat a stúdió Facebook és TikTok csatornáin fut, saját backend nélkül.',
-          'Mobil-first reszponzív, hamburger-menüvel; futószöveg és görgetéskor megjelenő animációk adják a lendületet. Tiszta HTML, CSS és JavaScript, keretrendszer és build lépés nélkül.'
-        ],
-        en: [
-          'B&D Hairstudio is the presentation website of a hair studio/barber in Hajdúszoboszló. A one-page, static site that makes a strong first impression: large geometric all-caps headings, a vivid green accent and a light paper base.',
-          'The content shows the services, the gallery and the prices, then nudges toward direct booking — booking and contact run on the studio Facebook and TikTok channels, with no backend of its own.',
-          'Mobile-first responsive, with a hamburger menu; a marquee ticker and reveal-on-scroll animations add momentum. Plain HTML, CSS and JavaScript, no framework and no build step.'
+          {
+            h: 'Problem',
+            p: 'Taking appointments by phone and DM is time-consuming and error-prone: double bookings, back-and-forth, and no live view of the day. A small business rarely wants to rent an expensive booking system.'
+          },
+          {
+            h: 'Solution',
+            p: 'An account-based booker that does two things: the admin tracks bookings live, and it generates an embeddable booking widget for the owner’s own website (paste the code once). It computes free times from the services, opening hours (with breaks) and slot length, with collision protection — of two simultaneous bookings, the second one fails.'
+          },
+          {
+            h: 'Result',
+            p: 'Visitors can only book genuinely free slots, bookings appear live with statuses, and a cancellation frees the slot again. An overview also shows the last 12 months of revenue. Data syncs live in the cloud (Firebase).'
+          }
         ]
       }
     },
@@ -684,14 +688,94 @@
       },
       details: {
         hu: [
-          'A Panetti Photography Palicskó Anett fotográfus (Nyírbátor) bemutatkozó és foglaló weboldala — kismama, portré, esküvő, családi és gyermek fotózás. Elegáns, letisztult arculat: krém alap, arany és burgundi akcentus, klasszikus serif tipográfiával.',
-          'A központi elem a kategóriánként szűrhető galéria lightboxszal; egy animált nyitó-logó fogadja a látogatót, amely kirajzolódik, majd finoman átúszik a tartalomba.',
-          'Teljesen kétnyelvű (HU/EN), mobil-first reszponzív; a kapcsolat mailto: űrlappal, saját backend nélkül. Tiszta HTML, CSS és JavaScript.'
+          {
+            h: 'Probléma',
+            p: 'Egy fotográfusnál a képek eladják magukat — de csak akkor, ha van egy elegáns, gyors felület, amely rendezetten mutatja a munkákat, és megkönnyíti a megkeresést. Egy közösségi galéria erre kevés.'
+          },
+          {
+            h: 'Megoldás',
+            p: 'Kétnyelvű (HU/EN), mobil-first portfólió- és foglaló-oldal krém-arany arculattal, klasszikus serif tipográfiával. A központi elem a kategóriánként (kismama, portré, esküvő, családi, gyermek) szűrhető galéria lightboxszal; egy animált nyitó-logó fogadja a látogatót, amely kirajzolódik, majd átúszik a tartalomba. Kapcsolat mailto: űrlappal, saját backend nélkül.'
+          },
+          {
+            h: 'Eredmény',
+            p: 'Egy letisztult, elegáns oldal, amely a fotós stílusát tükrözi, és élesben fut (GitHub Pages). A látogató kategóriánként böngészheti a munkákat, és pár kattintással megkeresheti a fotográfust.'
+          }
         ],
         en: [
-          'Panetti Photography is the portfolio and booking website of photographer Anett Palicskó (Nyírbátor) — maternity, portrait, wedding, family and child photography. An elegant, refined identity: a cream base, gold and burgundy accents, with classic serif typography.',
-          'The centrepiece is a category-filterable gallery with a lightbox; an animated intro logo greets the visitor, drawing itself and then gently dissolving into the content.',
-          'Fully bilingual (HU/EN), mobile-first responsive; contact via a mailto: form, with no backend of its own. Plain HTML, CSS and JavaScript.'
+          {
+            h: 'Problem',
+            p: 'For a photographer the images sell themselves — but only with an elegant, fast interface that shows the work in an organised way and makes enquiries easy. A social gallery is not enough.'
+          },
+          {
+            h: 'Solution',
+            p: 'A bilingual (HU/EN), mobile-first portfolio & booking site with a cream-and-gold identity and classic serif typography. The centrepiece is a gallery filterable by category (maternity, portrait, wedding, family, child) with a lightbox; an animated intro logo greets the visitor, drawing itself and dissolving into the content. Contact via a mailto: form, with no backend.'
+          },
+          {
+            h: 'Result',
+            p: 'A refined, elegant site that reflects the photographer’s style and runs live (GitHub Pages). Visitors can browse the work by category and reach the photographer in a couple of clicks.'
+          }
+        ]
+      }
+    },
+    {
+      id: 'crestly',
+      title: 'Crestly',
+      year: '2026',
+      type: {
+        hu: 'Webapp',
+        en: 'Web app'
+      },
+      tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+      images: {
+        dark: [
+          'kepek/crestly_attekintes_dark.png',
+          'kepek/crestly_reszveny_dark.png',
+          'kepek/crestly_kripto_dark.png',
+          'kepek/crestly_arany_dark.png',
+          'kepek/crestly_hitel_dark.png',
+          'kepek/crestly_szolgaltatasok_dark.png'
+        ],
+        light: [
+          'kepek/crestly_attekintes_light.png',
+          'kepek/crestly_reszveny_light.png',
+          'kepek/crestly_kripto_light.png',
+          'kepek/crestly_arany_light.png',
+          'kepek/crestly_hitel_light.png',
+          'kepek/crestly_szolgaltatasok_light.png'
+        ]
+      },
+      short: {
+        hu: 'Fiók-alapú személyi pénzügyi és vagyonkezelő webapp élő árfolyamokkal. Arany, részvény, kripto, hitel és előfizetés egyetlen áttekinthető felületen, saját rajzolású diagramokkal.',
+        en: 'An account-based personal finance & wealth manager with live prices. Gold, stocks, crypto, loans and subscriptions on one clear screen, with custom-drawn charts.'
+      },
+      details: {
+        hu: [
+          {
+            h: 'Probléma',
+            p: 'Egy magánszemély vagyona jellemzően szétszórtan él — arany, részvény, kripto, hitel, előfizetés külön appokban és táblázatokban. Nincs egyetlen szám, amely megmondaná, valójában mennyit ér a portfólió, és mennyi rajta a hozam.'
+          },
+          {
+            h: 'Megoldás',
+            p: 'Fiók-alapú vagyonkezelő webapp, amely minden eszköztípust egy felületre hoz, és élő árfolyamokkal számol publikus forrásokból (kripto: CoinGecko, részvény: Yahoo Finance, deviza: EKB, arany: XAU spot). A nyereség/veszteség automatikus; a deviza akár a tranzakció napi árfolyamán váltódik a pontos historikus értékért. Saját rajzolású diagramok, külső könyvtár és build lépés nélkül.'
+          },
+          {
+            h: 'Eredmény',
+            p: 'Egy kép a teljes nettó vagyonról: befektetett érték, realizált/nem realizált eredmény, osztalékráta, havi pénzforgalom és eszközallokáció — mind élőben, kétnyelvű, világos/sötét felületen, mobilon is hibátlanul.'
+          }
+        ],
+        en: [
+          {
+            h: 'Problem',
+            p: 'An individual’s wealth usually lives scattered — gold, stocks, crypto, loans and subscriptions across separate apps and spreadsheets. There is no single number telling you what the portfolio is really worth, or what it is returning.'
+          },
+          {
+            h: 'Solution',
+            p: 'An account-based wealth manager that brings every asset type onto one screen and calculates with live prices from public sources (crypto: CoinGecko, stocks: Yahoo Finance, FX: ECB, gold: XAU spot). P&L is automatic; FX can resolve at each trade’s own date for accurate historical value. Custom-drawn charts, no external library and no build step.'
+          },
+          {
+            h: 'Result',
+            p: 'One picture of total net worth: invested value, realised/unrealised P&L, dividend rate, monthly cash flow and asset allocation — all live, bilingual, in a light/dark interface that is flawless on mobile too.'
+          }
         ]
       }
     }
@@ -1170,6 +1254,7 @@
     galTheme = ths.indexOf('light') >= 0 ? 'light' : 'dark';
     var paras = (p.details[LANG] || p.details.hu)
       .map(function (t) {
+        if (t && typeof t === 'object') return '<h4 class="md-h">' + esc(t.h) + '</h4><p>' + esc(t.p) + '</p>';
         return '<p>' + esc(t) + '</p>';
       })
       .join('');

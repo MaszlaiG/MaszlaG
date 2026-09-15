@@ -2,12 +2,13 @@
 
 **Language / Nyelv:** [English](#english) · [Magyar](#magyar)
 
-**🌐 Live / Élő oldal:** <https://maszlaigabor.hu/>
 **📄 Design doc / Tervdokumentáció:** [`dokumentumok/`](dokumentumok/) (PDF, HU + EN)
 
 ---
 
 ## English
+
+**🌐 Live site:** <https://maszlaigabor.hu/> · GitHub Pages: <https://maszlaig.github.io/MaszlaG/>
 
 The portfolio website of web developer **Gábor Mászlai** (Hajdúszoboszló) — with a construction background. A one-page, view-based **static** site: services, selected work, prices and contact. Fully **bilingual (HU/EN)**, mobile-first responsive, no build step and no framework.
 
@@ -27,6 +28,8 @@ The portfolio website of web developer **Gábor Mászlai** (Hajdúszoboszló) �
 ---
 
 ## Magyar
+
+**🌐 Élő oldal:** <https://maszlaigabor.hu/> · GitHub Pages: <https://maszlaig.github.io/MaszlaG/>
 
 Mászlai Gábor webfejlesztő (Hajdúszoboszló) portfólió-oldala — építőipari háttérrel. Egyoldalas, nézetekre bontott, **statikus** oldal: szolgáltatások, kiválasztott munkák, árak és kapcsolat. Teljesen **kétnyelvű (HU/EN)**, mobil-first reszponzív, build lépés és keretrendszer nélkül.
 
